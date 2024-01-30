@@ -10,10 +10,14 @@ export const fetchUsers=createAsyncThunk('fetchUsers',async()=>{
    
     try {
       console.log(process.env.REACT_APP_SERVER_URI)
-      const url=process.env.REACT_APP_SERVER_URI.concat('/fetchUsers')
-      
-       console.log(url)
-        const response = await axios.get(url);
+      const u='http://localhost:4000/fetchUsers';
+      const url1=`${process.env.REACT_APP_SERVER_URI}/fetchUsers`
+      const url2=process.env.REACT_APP_SERVER_URI+"/fetchUsers"
+      console.log(u)
+       console.log(url1)
+       console.log(url2)
+       
+        const response = await axios.get(url2);
         return response.data.user; // Assuming your server returns the user object
       } catch (error) {
         throw error;
@@ -24,7 +28,7 @@ export const editUser=createAsyncThunk('editUser',async(credentials)=>{
    
   try {
       console.log(credentials.id)
-      const url=process.env.REACT_SERVER_URI.concat(`/editUser/${credentials.id}`);
+      const url=process.env.REACT_APP_SERVER_URI.concat(`/editUser/${credentials.id}`);
       const response = await axios.put(url,credentials.formData);
       return response.data; // Assuming your server returns the user object
     } catch (error) {
@@ -33,7 +37,7 @@ export const editUser=createAsyncThunk('editUser',async(credentials)=>{
 })
 export const signUpUser=createAsyncThunk('signUpUser',async(credentials)=>{
   try{
-    const url=process.env.REACT_SERVER_URI.concat('/api/signup');
+    const url=process.env.REACT_APP_SERVER_URI.concat('/api/signup');
         const res=await axios.post(url,credentials)
         return res.data;
   }
