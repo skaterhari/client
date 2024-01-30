@@ -99,8 +99,12 @@ button:hover {
   color: whitesmoke;
 }
 .edit-details-container form{
-  height:70vh;
+  height:80vh;
+  width: 350px;
   margin: auto;
+}
+.edit-details-container{
+  width: 400px;
 }
 .form-group {
   margin-bottom: 15px;
@@ -114,7 +118,9 @@ button:hover {
   margin-bottom: 5px;
   font-weight: bold;
 }
-
+.user-details-container{
+width: 400px;
+}
 .user-details-container p {
   margin: 0;
 }
@@ -122,4 +128,7 @@ button:hover {
 .user-details-container h1 {
   text-align: center;
   color: #333;
+}
+.user-details-container form{
+  width: 350px;
 }
